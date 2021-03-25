@@ -20,6 +20,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
+  // *****************************************************
+  // TO DO: Change this array to a request to the DB for the api keys.
   private apiKeys: string[] = [
     'Q95h00aQLFBcy4MN5Et^U.R])Slb1u=P/thZ|~0$Rb^Ml_M[5ZJcuk^kPq|Ax|I',
     'n??-|?,T3+VOg"yX:onPGCZ"B5#U/IGZZiFl0jGfhmSm.u<KBcFJFXR4NA)4oH*',
@@ -29,6 +31,7 @@ export class AuthService {
     return this.apiKeys.find((apiK) => apiKey === apiK);
   }
 
+  // *****************************************************
   public login(user: AuthUser): AccessToken {
     const payload = {
       email: user.email,
